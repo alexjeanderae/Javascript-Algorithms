@@ -1,0 +1,15 @@
+//mutation of strings- Return true if the string in the first element of the array contains all of the letters of the string in the second element of the array.//
+
+function mutation(arr) {
+  return arr[1].toLowerCase()
+    .split('')
+    .every(function(letter) {
+      return arr[0].toLowerCase()
+        .indexOf(letter) !== -1;
+    });
+}
+  
+
+mutation(["hello", "hey"]); //should return false
+mutation(["hello", "Hello"]); //should return true
+mutation(["Alien", "line"]); // should return true because all of the letters in "line" are present in "Alien".
